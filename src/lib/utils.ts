@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://20.219.9.65:8080'
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL?.replace(/\/$/, '') ?? ''
 
 export function resolveFileUrl(url: string | null | undefined): string | null {
   if (!url) return null

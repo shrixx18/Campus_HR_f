@@ -16,6 +16,7 @@ React + TypeScript SPA for the CampusHire campus placement platform. Connects to
 
 - Node.js 18+
 - Backend running at `http://20.219.9.65:8080` (see Campus_HR_b)
+- In production, proxy `/api` from the HTTPS frontend host to the backend
 
 ## Setup
 
@@ -31,7 +32,9 @@ The app runs at [http://localhost:5173](http://localhost:5173).
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `VITE_API_BASE_URL` | `http://20.219.9.65:8080` | Backend API gateway URL |
+| `VITE_API_BASE_URL` | empty | Optional API base URL. Leave empty for same-origin `/api` requests. |
+
+The deployed HTTPS frontend cannot call `http://20.219.9.65:8080` directly from the browser because browsers block mixed content. Keep `VITE_API_BASE_URL` empty and configure your hosting or reverse proxy to forward `/api` to `http://20.219.9.65:8080`.
 
 ## User roles
 
