@@ -15,7 +15,7 @@ React + TypeScript SPA for the CampusHire campus placement platform. Connects to
 ## Prerequisites
 
 - Node.js 18+
-- Backend running at `http://localhost:8080` (see Campus_HR_b)
+- Backend running at `http://20.219.9.65:8080` (see Campus_HR_b)
 
 ## Setup
 
@@ -31,26 +31,20 @@ The app runs at [http://localhost:5173](http://localhost:5173).
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `VITE_API_BASE_URL` | `http://localhost:8080` | Backend API gateway URL |
+| `VITE_API_BASE_URL` | `http://20.219.9.65:8080` | Backend API gateway URL |
 
 ## User roles
 
-- **Student** — self-register at `/register`, browse opportunities, apply, track applications
-- **Coordinator** — seeded accounts only; manage opportunities, view registrations, update application statuses
+- **Student** - self-register at `/register`, browse opportunities, apply, track applications
+- **Coordinator** - self-register at `/register`, manage opportunities, view registrations, update application statuses
 
 ## Backend integration
 
-Start the backend:
+For local backend development:
 
 ```bash
 cd ../Campus_HR_b
 docker compose up -d
-```
-
-Seed a coordinator for testing:
-
-```bash
-docker compose exec identity-service python /app/scripts/seed-coordinator.py
 ```
 
 ## Scripts
